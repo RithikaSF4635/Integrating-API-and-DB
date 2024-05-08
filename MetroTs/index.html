@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Metro Card Application</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <div id="home">
+            <h2>Home Page</h2>
+            <button type="button" onclick="newUser()">SignUp</button>
+            <button type="button" onclick="existingUser()">SignIn</button>
+        </div>
+        <div id="newUser">
+            <h3>SignUp Page</h3>
+    
+            <label> User Name : </label><br><input type="text" id="newUserName" onkeyup="checkNewUserName('newUserName')">
+            <label id="newUserNameMessage"></label><br>
+            <label>Card Number : </label><br><input type="number" name="cardNumber" id="cardNumber" onkeyup="checkCardNumber('cardNumber')">
+            <label id="cardNumberMessage"></label>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" onkeyup="checkEmail('email')">
+            <label id="emailMessage"></label><br><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" onkeyup="checkPassword('password')">
+            <label id="passwordMessage"></label><br><br>
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpassword" onkeyup="checkConfirmPassword('cpassword','password')">
+            <label id="cpassMessage"></label><br><br>
+            <label>User Phone Number: </label>
+            <input type="number" name="userPhonenumber" id="newUserPhonenumber" onkeyup="checkPhoneNumber('newUserPhonenumber')">
+            <label id="newUserPhonenumberMessage"></label><br><br>
+            <button type="submit" onclick="signUp()">Submit</button>
+        </div>
+        <div id="existingUser">
+            <label>SignIn Page</label>
+            <label>Email ID : </label>
+            <input type="text" id="existingUserEmail">
+            <label >Password : </label>
+            <input type="password"  id="existingUserPassword"><br><br>
+            <button type="button" onclick="SignIn()">SignIn</button><br>
+            <label id="availableUser"></label>
+        </div>
+        <div id="menubar">
+            <h2>Welcome...</h2>
+            <button onclick="menuPage()">Back</button>
+            <button onclick="ShowBalance()">Balance Check</button>
+            <button onclick="Topup()">Recharge</button>
+            <button onclick="showHistory()">View Travel History</button>
+            <button onclick="Travel()">Travel</button>
+            <button onclick="Exit()">Home Page</button>
+        </div>
+        <div id="showBalance">
+            <label id="balance"></label>
+        </div>
+        <div id="topup">
+            <label id="currentBalance">CurrentBalance :</label><br>
+            <Label>Enter Recharge Amount</Label>
+            <input type="number" id="amount"><br><br>
+            <button type="button" onclick="recharge()">Recharge</button>
+            <label id="rechargebalance">
+                <p>TopUp Successfully done....</p>
+                <p>Your CurrentBalance is : <span id="afterTopup"></span></p>
+            </label>
+        </div>
+        <div id="travel">
+            <h3>Travel Booking</h3>
+            <table border="2" id="travelDisplay">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>From Location</th>
+                        <th>To Location</th>
+                        <th>Ticket Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <table border="2" id="historyDisplay">
+            <thead>
+                <tr>
+                    
+                    <th>Travel ID</th>
+                    <th>Card Number</th>
+                    <th>From Location</th>
+                    <th>To Location</th>
+                    <th>Date Travel</th>
+                    <th>Travel Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </body>
+</html>
