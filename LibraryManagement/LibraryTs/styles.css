@@ -1,0 +1,118 @@
+#newUser, #existingUser,#menubar,#topup,#showBalance,#historyDisplay,#borrow,#borrowHistoryExport,#returnHistoryDisplay{
+    display: none;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#home h2{
+    color: #333;
+    font-size: 50px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+#home{
+    text-align: center;
+    margin-top: 10%;
+}
+#home button{
+    width: 200px;
+    height: auto;
+}
+input[type="text"], input[type="email"], input[type="password"],input[type="number"],input[type="date"]{
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border:1px solid #ccc;
+    margin-left: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#newUser button,#existingUser button{
+    margin-left: 35%;
+}
+button[type="submit"], button[type="button"], input[type="button"]{
+    padding: 10px 20px;
+    background-color: #f86ff3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+button[type="submit"]:hover, button[type="button"]:hover, input[type="button"]:hover{
+    background-color: #af45ac;
+}
+
+#menubar button{
+    padding: 10px 20px;
+    background-color: #f863f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#menubar button:hover
+{
+    background-color: #af45ac;
+}
+
+#borrowHistoryExport button,#topup button,#borrow button{
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    border:#333;
+    border-style: groove;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#borrowHistoryExport button:hover,#topup button:hover,#borrow button:hover{
+    background-color: wheat;
+}
+
+table,th,td{
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px  rgba(0, 0, 0, 0.1);
+    background-color: #f7c5ef;
+}
+
+th,td{
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #f2f2f2;
+}
+
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#newUser{
+    
+    border-style: ridge;
+    width: 30%;
+    border-width: 10px;
+    border-color: #cf9ad5;
+    margin-left: 500px;
+    padding: 10px;
+}
+#existingUser{
+    
+    padding: 10px;
+    border-style: ridge;
+    width: 30%;
+    border-width: 10px;
+    border-color: #cf9ad5;
+    margin-left: 550px;
+}

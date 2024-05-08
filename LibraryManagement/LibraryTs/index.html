@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Library Management</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <div id="home">
+            <h2>Home Page</h2>
+            <button type="button" onclick="newUser()">SignUp</button>
+            <button type="button" onclick="existingUser()">SignIn</button>
+        </div>
+        <div id="newUser">
+            <h3>SignUp Page</h3>
+    
+            <label> User Name : </label><br><input type="text" id="newUserName" onkeyup="checkNewUserName('newUserName')">
+            <label id="newUserNameMessage"></label><br>
+            <label>Gender : </label><br><input type="text" name="gender" id="gender" onkeyup="checkGender('gender')">
+            <label id="gender"></label>
+            <label>Department : </label><br><input type="text" name="department" id="department" onkeyup="checkDepartment('gender')">
+            <label id="department"></label>
+            <label>User Phone Number: </label>
+            <input type="number" name="userPhonenumber" id="newUserPhonenumber" onkeyup="checkPhoneNumber('newUserPhonenumber')">
+            <label id="newUserPhonenumberMessage"></label><br><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" onkeyup="checkEmail('email')">
+            <label id="emailMessage"></label><br><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" onkeyup="checkPassword('password')">
+            <label id="passwordMessage"></label><br><br>
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" name="cpassword" id="cpassword" onkeyup="checkConfirmPassword('cpassword','password')">
+            <label id="cpassMessage"></label><br><br>
+            
+            <button type="submit" onclick="signUp()">Submit</button>
+        </div>
+        <div id="existingUser">
+            <label>SignIn Page</label>
+            <label>Email ID : </label>
+            <input type="text" id="existingUserEmail">
+            <label >Password : </label>
+            <input type="password"  id="existingUserPassword"><br><br>
+            <button type="button" onclick="SignIn()">SignIn</button><br>
+            <label id="availableUser"></label>
+        </div>
+        <div id="menubar">
+            <h2>Welcome...</h2>
+            <button onclick="menuPage()">Back</button>
+            <button onclick="ShowBalance()">Balance Check</button>
+            <button onclick="Topup()">Wallet Recharge</button>
+            <button onclick="BorrowBook()">Borrow Book</button>
+            <button onclick="showHistory()">Show Borrow History</button>
+            <button onclick="ReturnBook()">Return Book</button>
+            <button onclick="Exit()">Home Page</button>
+        </div>
+        <div id="showBalance">
+            <label id="balance"></label>
+        </div>
+        <div id="topup">
+            <label id="currentBalance">CurrentBalance :</label><br>
+            <Label>Enter Recharge Amount</Label>
+            <input type="number" id="amount"><br><br>
+            <button type="button" onclick="recharge()">Recharge</button>
+            <label id="rechargebalance">
+                <p>TopUp Successfully done....</p>
+                <p>Your CurrentBalance is : <span id="afterTopup"></span></p>
+            </label>
+        </div>
+        <div id="borrowHistoryExport">
+            <a><button id="exportID" onclick="ExportData()">Export</button></a>
+            <table id="historyDisplay">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>User ID</th>
+                        <th>Borrowed Date</th>
+                        <th>BorrowBookCount</th>
+                        <th>Status</th>
+                        <th>PaidFineAmount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <table id="returnHistoryDisplay">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>User ID</th>
+                    <th>Borrowed Date</th>
+                    <th>BorrowBookCount</th>
+                    <th>Status</th>
+                    <th>PaidFineAmount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+        <div id="borrow">
+            <h3>Borrow</h3>
+            <table border="2" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Author Name</th>
+                        <th>Available Book Count</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table data will be inserted here -->
+                </tbody>
+            </table>
+            <div id="borrowdetails">
+                <label>Required Count </label><input type="number" id="bookRequiredCount">
+                <button onclick="borrow()">Submit</button>
+            </div>
+    
+    
+        </div>
+    </body>
+</html>
